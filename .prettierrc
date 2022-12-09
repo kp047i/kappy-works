@@ -18,8 +18,6 @@
   "trailingComma": "es5",
   "useTabs": false,
   "vueIndentScriptAndStyle": false,
-  "filepath": "/Users/kappy/workspace/kappy-works/.prettierrc",
-  "parser": "yaml",
   "plugins": ["./node_modules/prettier-plugin-astro"],
   "overrides": [
     {

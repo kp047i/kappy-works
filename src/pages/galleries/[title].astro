@@ -3,24 +3,35 @@ import GarallyLayout from "../../layouts/GarallyLayout.astro";
 
 const { title } = Astro.params;
 
-
 export async function getStaticPaths() {
-  const allSketches = await Astro.glob('../../sketches/**/index.ts');
+  const allSketches = await Astro.glob("../../sketches/**/index.ts");
   return allSketches.map((sketch) => {
     return {
       params: {
-        title: sketch.title
-      }
-    }
-  })
+        title: sketch.title,
+      },
+    };
+  });
 }
 ---
 
-<GarallyLayout title={title?.toString() ?? ''}>
-  <main>
-    <h1>
-      test
-    </h1>
-  </main>
-  <!-- <script src={`../../sketches/${title}/index.ts`} type="module"></script> -->
+<GarallyLayout title={title?.toString() ?? ""}>
+  <main class="gallerly"></main>
 </GarallyLayout>
+
+<script>
+  import p5 from "p5";
+  const { sketch } = await import(
+    `../../sketches/${window.location.pathname.split("/")[2]}/index.ts`
+  );
+  new p5(sketch);
+</script>
+
+<style>
+  .gallerly {
+    display: grid;
+    place-content: center;
+    height: 100vh;
+    width: 100vw;
+  }
+</style>

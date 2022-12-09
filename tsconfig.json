@@ -2,7 +2,7 @@
   "compilerOptions": {
     /* Language and Environment */
     "extends": "astro/tsconfigs/strictest",
-    "target": "es2016",
+    "target": "es2022",
     "jsx": "react-jsx",
     "jsxImportSource": "react",                /* Control what method is used to detect module-format JS files. */
     /* Modules */

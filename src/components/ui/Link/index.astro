@@ -1,0 +1,18 @@
+---
+interface Props {
+  to: string;
+  decoration?: boolean;
+}
+
+const { to, decoration = true } = Astro.props;
+---
+
+<a href={to} class={decoration ? "" : "decoration-none"}>
+  <slot />
+</a>
+
+<style>
+  .decoration-none {
+    text-decoration: none;
+  }
+</style>

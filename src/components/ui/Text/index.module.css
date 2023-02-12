@@ -1,0 +1,27 @@
+.none-margin {
+  margin: 0;
+}
+
+.text-s {
+  font-size: 16px;
+}
+
+.text-md {
+  font-size: 24px;
+}
+
+.text-lg {
+  font-size: 40px;
+}
+
+.color-main {
+  color: #3e4240;
+}
+
+.color-primary {
+  color: #4bb676;
+}
+
+.color-secondary {
+  color: #b6724b;
+}

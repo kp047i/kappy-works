@@ -1,0 +1,29 @@
+---
+import { FontSize } from "../../../util/font";
+
+interface Props {
+  as?: "h1" | "h2" | "p" | "span";
+  size?: FontSize;
+}
+
+const { as = "p", size = "md" } = Astro.props;
+const Element = as;
+---
+
+<Element class={`font-size-${size}`}>
+  <slot />
+</Element>
+
+<style>
+  .font-size-sm {
+    font-size: 1rem;
+  }
+
+  .font-size-md {
+    font-size: 1.5rem;
+  }
+
+  .font-size-lg {
+    font-size: 2rem;
+  }
+</style>

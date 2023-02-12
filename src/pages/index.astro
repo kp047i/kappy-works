@@ -1,81 +1,103 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
+import Layout from "@layouts/Layout.astro";
+import Text from "@components/ui/Text/index.astro";
+import Avator from "@components/ui/Avator/index.astro";
+import Icon from "@components/ui/Icon/index.astro";
+import Link from "@components/ui/Link/index.astro";
 ---
 
-<Layout title="Welcome to Astro.">
-	<main>
-		<h1>Welcome to <span class="text-gradient">Astro</span></h1>
-		<p class="instructions">
-			To get started, open the directory <code>src/pages</code> in your project.<br />
-			<strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
-		</p>
-		<ul role="list" class="link-card-grid">
-			<Card
-				href="https://docs.astro.build/"
-				title="Documentation"
-				body="Learn how Astro works and explore the official API docs."
-			/>
-			<Card
-				href="https://astro.build/integrations/"
-				title="Integrations"
-				body="Supercharge your project with new frameworks and libraries."
-			/>
-			<Card
-				href="https://astro.build/themes/"
-				title="Themes"
-				body="Explore a galaxy of community-built starter themes."
-			/>
-			<Card
-				href="https://astro.build/chat/"
-				title="Community"
-				body="Come say hi to our amazing Discord community. ❤️"
-			/>
-		</ul>
-	</main>
+<Layout title="kappy works">
+  <section id="top" class="top">
+    <Text as="h1" size="lg">I'm <mark>kappy.</mark></Text>
+    <div class="mt-12">
+      <Text size="md" bold
+        >Webエンジニアです。Webフロントエンド開発に興味があります。</Text
+      >
+    </div>
+  </section>
+  <section id="about" class="about">
+    <Text as="h2" size="md">About me</Text>
+    <div class="avator-wrapper">
+      <Avator width={128} />
+    </div>
+    <div class="socials-wrapper">
+      <Link to="https://twitter.com/kp047i">
+        <Icon
+          name="mdi:github"
+          title="Link to my GitHub profile page"
+          hoverColor="blackAlpha100"
+        />
+      </Link>
+      <Link to="https://github.com/kp047i">
+        <Icon
+          name="mdi:twitter"
+          title="Link to my Twitter profile page"
+          hoverColor="blackAlpha100"
+        />
+      </Link>
+      <Link to="https://qiita.com/kp047i">
+        <Icon
+          name="simple-icons:qiita"
+          title="Link to my Qiita profile page"
+          hoverColor="blackAlpha100"
+        />
+      </Link>
+    </div>
+    <div class="introduction">
+      <Text size="sm" bold>
+        大学在学時にインタラクティブアートを展示するサークルに所属し、電子工作やWeb開発に興味を持ちました。大学4年次からIoT関連のスタートアップの企業でアルバイトを経験し、Webエンジニアを志すようになりました。
+      </Text>
+      <Text size="sm" bold>
+        JavaScriptやTypeScriptを使った開発が得意です。就職してからは主に、React,
+        Next.js, NestJsを使った開発を経験してきました。
+      </Text>
+    </div>
+  </section>
+  <section class="galleries">
+    <Text as="h2">Galleries</Text>
+    <div class="galleries-text">
+      <Text as="p" size="sm" bold>
+        p5.jsを使ったクリエイティブコーディングの作品を載せています。自作コンポーネントやcssアニメーションなども載せていきたい。
+      </Text>
+    </div>
+  </section>
 </Layout>
 
 <style>
-	main {
-		margin: auto;
-		padding: 1.5rem;
-		max-width: 60ch;
-	}
-	h1 {
-		font-size: 3rem;
-		font-weight: 800;
-		margin: 0;
-	}
-	.text-gradient {
-		background-image: var(--accent-gradient);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-size: 400%;
-		background-position: 0%;
-	}
-	.instructions {
-		line-height: 1.6;
-		margin: 1rem 0;
-		border: 1px solid rgba(var(--accent), 25%);
-		background-color: white;
-		padding: 1rem;
-		border-radius: 0.4rem;
-	}
-	.instructions code {
-		font-size: 0.875em;
-		font-weight: bold;
-		background: rgba(var(--accent), 12%);
-		color: rgb(var(--accent));
-		border-radius: 4px;
-		padding: 0.3em 0.45em;
-	}
-	.instructions strong {
-		color: rgb(var(--accent));
-	}
-	.link-card-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-		gap: 1rem;
-		padding: 0;
-	}
+  .top {
+    margin-top: 48px;
+  }
+
+  .about {
+    margin-top: 48px;
+  }
+  .introduction {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin-top: 24px;
+  }
+  .galleries {
+    margin-top: 48px;
+  }
+  .galleries-text {
+    margin-top: 24px;
+  }
+  mark {
+    background: linear-gradient(transparent 60%, #4bb676 70%);
+    color: #3e4240;
+  }
+  .avator-wrapper {
+    display: grid;
+    place-content: center;
+    margin-top: 40px;
+  }
+
+  .socials-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    margin-top: 24px;
+  }
 </style>

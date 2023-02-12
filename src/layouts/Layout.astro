@@ -1,35 +1,60 @@
 ---
+import "@fontsource/readex-pro";
+import Header from "../components/ui/Header/index.astro";
+
 export interface Props {
-	title: string;
+  title: string;
 }
 
 const { title } = Astro.props;
 ---
 
 <!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <Header />
+    <main>
+      <slot />
+    </main>
+  </body>
 </html>
 <style is:global>
-	:root {
-		--accent: 124, 58, 237;
-		--accent-gradient: linear-gradient(45deg, rgb(var(--accent)), #da62c4 30%, white 60%);
-	}
-	html {
-		font-family: system-ui, sans-serif;
-		background-color: #F6F6F6;
-	}
-	code {
-		font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
-			Bitstream Vera Sans Mono, Courier New, monospace;
-	}
+  :root {
+    --c-primary: #4bb676;
+    --c-secondary: #b6724b;
+    --c-main: #3e4240;
+    --c-blackAlpha-50: rgba(0, 0, 0, 0.04);
+    --c-blackAlpha-100: rgba(0, 0, 0, 0.06);
+    --c-blackAlpha-200: rgba(0, 0, 0, 0.08);
+    --c-blackAlpha-300: rgba(0, 0, 0, 0.16);
+    --c-blackAlpha-400: rgba(0, 0, 0, 0.24);
+    --c-blackAlpha-500: rgba(0, 0, 0, 0.36);
+    --c-blackAlpha-600: rgba(0, 0, 0, 0.48);
+    --c-blackAlpha-700: rgba(0, 0, 0, 0.64);
+    --c-blackAlpha-800: rgba(0, 0, 0, 0.8);
+    --c-blackAlpha-900: rgba(0, 0, 0, 0.92);
+  }
+  html {
+    font-family: "Readex Pro", "Hiragino UD Sans", "Hiragino Sans", "Yu Gothic",
+      sans-serif;
+    background-color: #e7f1eb;
+    color: #3e4240;
+  }
+  code {
+    font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
+      DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
+  }
+
+  main {
+    margin: auto;
+    padding: 0 16px;
+    max-width: 60ch;
+  }
 </style>

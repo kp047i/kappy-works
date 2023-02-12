@@ -1,0 +1,20 @@
+---
+interface Props {
+  width: number;
+}
+
+const { width } = Astro.props;
+---
+
+<img
+  src="https://res.cloudinary.com/dlibdyano/image/upload/v1675685454/kp047i/avator.png"
+  width={width}
+  alt="kappyのアバター"
+  class="rounded-full"
+/>
+
+<style>
+  .rounded-full {
+    border-radius: 50%;
+  }
+</style>

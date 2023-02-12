@@ -1,0 +1,40 @@
+---
+import type { FontSize } from "@util/font";
+
+interface Props {
+  as?: "h1" | "h2" | "h3" | "p" | "span";
+  size?: FontSize;
+  bold?: boolean;
+}
+
+const { as = "p", size = "md", bold = false } = Astro.props;
+const Element = as;
+---
+
+<Element class={`font-size-${size} ${bold ? "bold" : ""}`}>
+  <slot />
+</Element>
+
+<style>
+  h1,
+  h2,
+  h3,
+  p {
+    margin: 0;
+  }
+  .font-size-sm {
+    font-size: 1rem;
+  }
+
+  .font-size-md {
+    font-size: 1.5rem;
+  }
+
+  .font-size-lg {
+    font-size: 2rem;
+  }
+
+  .bold {
+    font-weight: bold;
+  }
+</style>

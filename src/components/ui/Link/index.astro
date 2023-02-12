@@ -1,0 +1,25 @@
+---
+import type { Color } from "@util/color";
+
+interface Props {
+  to: string;
+  decoration?: boolean;
+  color?: Color;
+}
+
+const { to, decoration = true, color = "main" } = Astro.props;
+const decorationClass = decoration ? "" : "decoration-none";
+---
+
+<a href={to} class:list={[decorationClass, color]}>
+  <slot />
+</a>
+
+<style>
+  .decoration-none {
+    text-decoration: none;
+  }
+  .main {
+    color: var(--c-main);
+  }
+</style>

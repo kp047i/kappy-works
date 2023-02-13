@@ -9,14 +9,19 @@ import Link from "@components/ui/Link/index.astro";
 <Layout title="kappy works">
   <section id="top" class="top">
     <Text as="h1" size="lg">I'm <mark>kappy.</mark></Text>
-    <div class="mt-12">
-      <Text size="md" bold
-        >Webエンジニアです。Webフロントエンド開発に興味があります。</Text
-      >
+    <div class="top-introduction">
+      <Text size="md" bold>
+        Webエンジニアです。Webフロントエンド開発に興味があります。
+      </Text>
     </div>
   </section>
   <section id="about" class="about">
-    <Text as="h2" size="md">About me</Text>
+    <Text as="h2" size="md">
+      <div class="heading">
+        About me
+        <Icon name="mdi:leaf" color="primary" />
+      </div>
+    </Text>
     <div class="avator-wrapper">
       <Avator width={128} />
     </div>
@@ -49,12 +54,17 @@ import Link from "@components/ui/Link/index.astro";
       </Text>
       <Text size="sm" bold>
         JavaScriptやTypeScriptを使った開発が得意です。就職してからは主に、React,
-        Next.js, NestJsを使った開発を経験してきました。
+        Next.js, NestJsを使った開発をしています。
       </Text>
     </div>
   </section>
   <section class="galleries">
-    <Text as="h2">Galleries</Text>
+    <Text as="h2">
+      <div class="heading">
+        Galleries
+        <Icon name="mdi:leaf" color="primary" />
+      </div>
+    </Text>
     <div class="galleries-text">
       <Text as="p" size="sm" bold>
         p5.jsを使ったクリエイティブコーディングの作品を載せています。自作コンポーネントやcssアニメーションなども載せていきたい。
@@ -67,7 +77,9 @@ import Link from "@components/ui/Link/index.astro";
   .top {
     margin-top: 48px;
   }
-
+  .top-introduction {
+    margin-top: 24px;
+  }
   .about {
     margin-top: 48px;
   }
@@ -99,5 +111,9 @@ import Link from "@components/ui/Link/index.astro";
     justify-content: center;
     gap: 24px;
     margin-top: 24px;
+  }
+  .heading {
+    display: flex;
+    align-items: center;
   }
 </style>

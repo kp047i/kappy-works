@@ -2,6 +2,7 @@ lockfileVersion: 5.4
 
 specifiers:
   '@astrojs/react': ^1.2.2
+  '@fontsource/murecho': ^4.5.12
   '@fontsource/readex-pro': ^4.5.11
   '@types/p5': ^1.4.3
   '@types/react': ^18.0.26
@@ -22,6 +23,7 @@ specifiers:
 
 dependencies:
   '@astrojs/react': 1.2.2_yqqa5ithnjtlkxisuaub7c4kpa
+  '@fontsource/murecho': 4.5.12
   '@fontsource/readex-pro': 4.5.11
   '@types/react': 18.0.26
   '@types/react-dom': 18.0.9
@@ -446,6 +448,10 @@ packages:
     transitivePeerDependencies:
       - supports-color
     dev: true
+
+  /@fontsource/murecho/4.5.12:
+    resolution: {integrity: sha512-DHmWkaUE6OwJeq95TOzJqbZa7osXklWlEtvwzWPerguiT/IhQWUMbT1FNEk1bI7Ew3GBaORUJPTmsgTdkRA4QA==}
+    dev: false
 
   /@fontsource/readex-pro/4.5.11:
     resolution: {integrity: sha512-vfM6xW/NbAtSGPLzL931smgprvnOPDexHbLbeIOnF1oKCaLDp8RhViDtN/6ehz8e+OnJtFnRzcIsjXFuJDbIFg==}

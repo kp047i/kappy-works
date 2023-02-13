@@ -1,0 +1,22 @@
+---
+import Link from "@components/ui/Link/index.astro";
+---
+
+<footer>
+  &copy; 2023 <Link to="https://github.com/kp047i/">kappy</Link>
+</footer>
+
+<style>
+  footer {
+    margin: auto;
+    text-align: center;
+    padding: 0 16px;
+    max-width: 60ch;
+  }
+
+  @media (min-width: 768px) {
+    footer {
+      max-width: 100ch;
+    }
+  }
+</style>

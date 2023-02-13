@@ -4,16 +4,21 @@ import { Icon } from "astro-icon";
 
 export interface Props {
   name: string;
-  title: string;
+  title?: string;
+  color?: Color;
   hoverColor?: Color;
 }
 
 // get name from https://icon-sets.iconify.design/mdi/github/
 
-const { name, title, hoverColor } = Astro.props;
+const { name, title, color, hoverColor } = Astro.props;
 ---
 
-<Icon name={name} title={title} class:list={["icon-md", hoverColor || ""]} />
+<Icon
+  name={name}
+  title={title || ""}
+  class:list={["icon-md", color || "", hoverColor || ""]}
+/>
 
 <style>
   .icon-md {
@@ -24,5 +29,8 @@ const { name, title, hoverColor } = Astro.props;
   }
   .blackAlpha100:hover {
     background-color: var(--c-blackAlpha-100);
+  }
+  .primary {
+    color: var(--c-primary);
   }
 </style>

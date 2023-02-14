@@ -53,3 +53,5 @@ export const sketch = (p: p5) => {
     else art2();
   };
 };
+
+export const sketchP = new p5(sketch);

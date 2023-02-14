@@ -7,12 +7,13 @@ const background = "#e9ecef";
 export const sketch = (p: p5) => {
   const size = 80;
   let c: number;
-  let colors: string[];
+  let colors: [string, string, string] = ["#0b132b", "#01689A", "#53CCB0"];
   p.setup = () => {
     p.createCanvas(500, 500);
     p.angleMode("degrees");
     c = 0;
-    colors = switchColors(c);
+    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+    colors = switchColors(c)!;
   };
 
   p.draw = () => {
@@ -66,7 +67,8 @@ export const sketch = (p: p5) => {
 
   p.mouseClicked = () => {
     c++;
-    colors = switchColors(c);
+    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+    colors = switchColors(c)!;
   };
 
   const switchColors = (c: number) => {
@@ -74,6 +76,8 @@ export const sketch = (p: p5) => {
       ["#0b132b", "#01689A", "#53CCB0"],
       ["#226f54", "#bc4749", "#f4f0bb"],
     ];
-    return colorMatrix[c % 2];
+    return colorMatrix[c % 2] as [string, string, string];
   };
 };
+
+export const sketchP = new p5(sketch);

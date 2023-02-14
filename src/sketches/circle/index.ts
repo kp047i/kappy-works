@@ -38,3 +38,5 @@ const circles = (p: p5, x: number, y: number, size: number) => {
     });
   });
 };
+
+export const sketchP = new p5(sketch);

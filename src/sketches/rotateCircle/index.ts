@@ -41,8 +41,10 @@ const circles = (p: p5, x: number, y: number, size: number) => {
   ].forEach((colorRow, rowIndex) => {
     colorRow.forEach((color, index) => {
       p.noStroke();
-      p.fill(color);
+      p.fill(color ?? "#fff");
       p.circle(x + rowIndex * size, y + index * size, size);
     });
   });
 };
+
+export const sketchP = new p5(sketch);

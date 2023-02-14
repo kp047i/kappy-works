@@ -30,7 +30,7 @@ export const sketch = (p: p5) => {
   // TODO: 層にする
 
   p.draw = () => {
-    p.background(shuffledColors[0]);
+    p.background(shuffledColors[0] ?? "#fff");
     for (let layer = 0; layer < 3; layer++) {
       for (let row = 0; row < num; row++) {
         for (let column = 0; column < num; column++) {
@@ -46,9 +46,9 @@ export const sketch = (p: p5) => {
           const color = shuffledColors[makeIntRandom(3) + 1];
           if (isFill) {
             p.noStroke();
-            p.fill(color);
+            p.fill(color ?? "#fff");
           } else {
-            p.stroke(color);
+            p.stroke(color ?? "#fff");
             p.strokeWeight(5);
             p.noFill();
           }
@@ -104,3 +104,5 @@ export const sketch = (p: p5) => {
     p.redraw();
   };
 };
+
+export const sketchP = new p5(sketch);

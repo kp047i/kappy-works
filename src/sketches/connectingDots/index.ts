@@ -37,32 +37,27 @@ export const sketch = (p: p5): void => {
     time += 1;
     if (time > 360) time = 0;
 
-    for (let i = 0; i < numParticles - 1; i += 1) {
-      particles[i].update(p.width, p.height);
+    for (const particle of particles) {
+      particle.update(p.width, p.height);
       for (let j = 0; j < numParticles - 1; j += 1) {
         if (
-          i !== j &&
           p.dist(
-            particles[i].position.x,
-            particles[i].position.y,
-            particles[j].position.x,
-            particles[j].position.y
+            particle.position.x,
+            particle.position.y,
+            particle.position.x,
+            particle.position.y
           ) < distanceRange
         ) {
           p.noStroke();
           p.fill(time, 70, 70, 0.7);
-          p.circle(
-            particles[i].position.x,
-            particles[i].position.y,
-            particles[i].size
-          );
+          p.circle(particle.position.x, particle.position.y, particle.size);
           p.strokeWeight(1);
           p.stroke(time, 70, 70, 0.7);
           p.line(
-            particles[i].position.x,
-            particles[i].position.y,
-            particles[j].position.x,
-            particles[j].position.y
+            particle.position.x,
+            particle.position.y,
+            particle.position.x,
+            particle.position.y
           );
         }
       }
@@ -95,3 +90,5 @@ export class Particle {
     if (this.position.y < 0 || this.position.y > height) this.velocity.y *= -1;
   }
 }
+
+export const sketchP = new p5(sketch);

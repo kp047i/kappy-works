@@ -63,3 +63,5 @@ export const sketch = (p: p5) => {
     p.translate(p.width / 2, p.height / 2);
   };
 };
+
+export const sketchP = new p5(sketch);

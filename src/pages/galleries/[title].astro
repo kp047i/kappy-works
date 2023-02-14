@@ -1,14 +1,14 @@
 ---
 import GarallyLayout from "../../layouts/GarallyLayout.astro";
+import { titles } from "src/sketches/title";
 
 const { title } = Astro.params;
 
 export async function getStaticPaths() {
-  const allSketches = await Astro.glob("../../sketches/**/index.ts");
-  return allSketches.map((sketch) => {
+  return titles.map((title) => {
     return {
       params: {
-        title: sketch.title,
+        title,
       },
     };
   });
@@ -19,13 +19,7 @@ export async function getStaticPaths() {
   <main class="gallerly"></main>
 </GarallyLayout>
 
-<script>
-  import p5 from "p5";
-  const { sketch } = await import(
-    `../../sketches/${window.location.pathname.split("/")[2]}/index.ts`
-  );
-  new p5(sketch);
-</script>
+<script src={`/src/sketches/${title}/index.ts`} type="module"></script>
 
 <style>
   .gallerly {

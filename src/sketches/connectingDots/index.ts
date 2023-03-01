@@ -13,6 +13,7 @@ export const sketch = (p: p5): void => {
     canvasWidth = p.min(p.windowWidth, 768);
     numParticles = p.min(p.windowWidth / 10, 50);
     distanceRange = p.min(p.windowWidth / 10, 50);
+
     p.createCanvas(canvasWidth, canvasWidth * 0.5);
     p.background(backgroundColor);
     time = p.random(0, 255);
@@ -39,13 +40,13 @@ export const sketch = (p: p5): void => {
 
     for (const particle of particles) {
       particle.update(p.width, p.height);
-      for (let j = 0; j < numParticles - 1; j += 1) {
+      for (const particle2 of particles) {
         if (
           p.dist(
             particle.position.x,
             particle.position.y,
-            particle.position.x,
-            particle.position.y
+            particle2.position.x,
+            particle2.position.y
           ) < distanceRange
         ) {
           p.noStroke();
@@ -56,8 +57,8 @@ export const sketch = (p: p5): void => {
           p.line(
             particle.position.x,
             particle.position.y,
-            particle.position.x,
-            particle.position.y
+            particle2.position.x,
+            particle2.position.y
           );
         }
       }

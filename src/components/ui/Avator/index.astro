@@ -1,14 +1,16 @@
 ---
 interface Props {
   width: number;
+  height?: number;
 }
 
-const { width } = Astro.props;
+const { width, height } = Astro.props;
 ---
 
 <img
   src="https://res.cloudinary.com/dlibdyano/image/upload/v1675685454/kp047i/avator.png"
   width={width}
+  height={height}
   alt="kappyのアバター"
   class="rounded-full"
 />

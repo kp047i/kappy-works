@@ -6,15 +6,15 @@ export const title = "grid";
 
 export const sketch = (p: p5) => {
   const num = 6;
-  const margin = 10;
+  const margin = 20;
   let size: number;
   let offset: number;
   let colors: string[];
   let shuffledColors: string[];
   p.setup = () => {
     p.createCanvas(600, 600);
-    offset = p.width / 5;
-    size = (p.width - offset * 2 - margin * (num - 1)) / num;
+    offset = p.width / 10;
+    size = (p.width - offset * 2 - margin * (num - 1)) / (num - 1);
     p.noLoop();
     p.angleMode(p.DEGREES);
 

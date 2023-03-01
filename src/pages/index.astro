@@ -4,6 +4,7 @@ import Text from "@components/ui/Text/index.astro";
 import Avator from "@components/ui/Avator/index.astro";
 import Icon from "@components/ui/Icon/index.astro";
 import Link from "@components/ui/Link/index.astro";
+import { titles } from "src/sketches/title";
 ---
 
 <Layout title="kappy works">
@@ -23,7 +24,7 @@ import Link from "@components/ui/Link/index.astro";
       </div>
     </Text>
     <div class="avator-wrapper">
-      <Avator width={128} />
+      <Avator width={128} height={128} />
     </div>
     <div class="socials-wrapper">
       <Link to="https://twitter.com/kp047i">
@@ -69,6 +70,15 @@ import Link from "@components/ui/Link/index.astro";
       <Text as="p" size="sm" bold>
         p5.jsを使ったクリエイティブコーディングの作品を載せています。自作コンポーネントやcssアニメーションなども載せていきたい。
       </Text>
+      <ul>
+        {
+          titles.map((title) => (
+            <li>
+              <a href={`/galleries/${title}`}>{title}</a>
+            </li>
+          ))
+        }
+      </ul>
     </div>
   </section>
 </Layout>

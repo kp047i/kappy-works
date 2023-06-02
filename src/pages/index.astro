@@ -4,7 +4,8 @@ import Text from "@components/ui/Text/index.astro";
 import Avator from "@components/ui/Avator/index.astro";
 import Icon from "@components/ui/Icon/index.astro";
 import Link from "@components/ui/Link/index.astro";
-import { titles } from "src/sketches/title";
+
+import { sketches } from "src/sketches/title";
 ---
 
 <Layout title="kappy works">
@@ -62,7 +63,7 @@ import { titles } from "src/sketches/title";
   <section class="galleries">
     <Text as="h2">
       <div class="heading">
-        Galleries
+        Sketches
         <Icon name="mdi:leaf" color="primary" />
       </div>
     </Text>
@@ -72,9 +73,9 @@ import { titles } from "src/sketches/title";
       </Text>
       <ul>
         {
-          titles.map((title) => (
+          sketches.map((sketch) => (
             <li>
-              <a href={`/galleries/${title}`}>{title}</a>
+              <a href={`/sketches/${sketch}`}>{sketch}</a>
             </li>
           ))
         }

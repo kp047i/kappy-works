@@ -1,1 +1,6 @@
-export const titles = ["2022Christmas", "connectingDots", "grid", "ichimatsu"];
+export const sketches = [
+  "2022-christmas",
+  "connecting-dots",
+  "grid",
+  "ichimatsu",
+];

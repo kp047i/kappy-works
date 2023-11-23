@@ -25,48 +25,6 @@ const { title } = Astro.props;
       <slot />
     </main>
     <Footer />
-    <style is:global>
-      :root {
-        --c-primary: #267c51;
-        --c-primary-50: #f0f9f3;
-        --c-secondary: #7c4f26;
-        --c-main: #3e4240;
-        --c-blackAlpha-50: rgba(0, 0, 0, 0.04);
-        --c-blackAlpha-100: rgba(0, 0, 0, 0.06);
-        --c-blackAlpha-200: rgba(0, 0, 0, 0.08);
-        --c-blackAlpha-300: rgba(0, 0, 0, 0.16);
-        --c-blackAlpha-400: rgba(0, 0, 0, 0.24);
-        --c-blackAlpha-500: rgba(0, 0, 0, 0.36);
-        --c-blackAlpha-600: rgba(0, 0, 0, 0.48);
-        --c-blackAlpha-700: rgba(0, 0, 0, 0.64);
-        --c-blackAlpha-800: rgba(0, 0, 0, 0.8);
-        --c-blackAlpha-900: rgba(0, 0, 0, 0.92);
-      }
-      html {
-        font-family: "Murecho", "Hiragino UD Sans", "Hiragino Sans", "Yu Gothic",
-          sans-serif;
-        background-color: var(--c-primary-50);
-        color: #2d3230;
-      }
-      code {
-        font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
-          DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
-      }
-
-      main {
-        margin: auto;
-        padding: 16px 0;
-        max-width: 60ch;
-      }
-
-      @media (min-width: 768px) {
-        main {
-          margin: auto;
-          padding: 32px 0;
-          max-width: 100ch;
-        }
-      }
-    </style>
     <!-- Cloudflare Web Analytics -->
     <script
       defer
@@ -75,3 +33,46 @@ const { title } = Astro.props;
     ></script><!-- End Cloudflare Web Analytics -->
   </body>
 </html>
+
+<style is:global>
+  :root {
+    --c-primary: #267c51;
+    --c-primary-50: #f0f9f3;
+    --c-secondary: #7c4f26;
+    --c-main: #3e4240;
+    --c-blackAlpha-50: rgba(0, 0, 0, 0.04);
+    --c-blackAlpha-100: rgba(0, 0, 0, 0.06);
+    --c-blackAlpha-200: rgba(0, 0, 0, 0.08);
+    --c-blackAlpha-300: rgba(0, 0, 0, 0.16);
+    --c-blackAlpha-400: rgba(0, 0, 0, 0.24);
+    --c-blackAlpha-500: rgba(0, 0, 0, 0.36);
+    --c-blackAlpha-600: rgba(0, 0, 0, 0.48);
+    --c-blackAlpha-700: rgba(0, 0, 0, 0.64);
+    --c-blackAlpha-800: rgba(0, 0, 0, 0.8);
+    --c-blackAlpha-900: rgba(0, 0, 0, 0.92);
+  }
+  html {
+    font-family: "Murecho", "Hiragino UD Sans", "Hiragino Sans", "Yu Gothic",
+      sans-serif;
+    background-color: var(--c-primary-50);
+    color: #2d3230;
+  }
+  code {
+    font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
+      DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
+  }
+
+  main {
+    margin: auto;
+    padding: 16px 0;
+    max-width: 60ch;
+  }
+
+  @media (min-width: 768px) {
+    main {
+      margin: auto;
+      padding: 32px 0;
+      max-width: 100ch;
+    }
+  }
+</style>

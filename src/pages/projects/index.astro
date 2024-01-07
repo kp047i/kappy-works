@@ -1,0 +1,50 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Text from "../../components/ui/Text/index.astro";
+
+import ProjectCard from "./_components/ProjectCard.astro";
+
+import { PROJECTS } from "./_consts/master";
+---
+
+<Layout title="kappy works">
+  <section id="projects" class="projects">
+    <div class="heading-wrapper">
+      <Text size="lg" bold as="h1">Projects</Text>
+      <Text class="description" size="sm">開発したものをまとめています。</Text>
+    </div>
+    <div>
+      <ul class="projects-list">
+        {
+          PROJECTS.map((project) => (
+            <li class="project-item">
+              <ProjectCard {...project} />
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  section {
+    display: grid;
+    gap: 3rem;
+  }
+  .project-image {
+    width: 100%;
+    height: auto;
+  }
+
+  .heading-wrapper {
+    display: grid;
+    gap: 0.5rem;
+  }
+
+  .projects-list {
+    display: grid;
+    gap: 3rem;
+  }
+</style>
+./_consts/master

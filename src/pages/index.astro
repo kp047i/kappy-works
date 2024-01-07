@@ -4,45 +4,38 @@ import Text from "@components/ui/Text/index.astro";
 import Avator from "@components/ui/Avator/index.astro";
 import Icon from "@components/ui/Icon/index.astro";
 import Link from "@components/ui/Link/index.astro";
-
-import { sketches } from "src/sketches/title";
 ---
 
 <Layout title="kappy works">
   <section id="top" class="top">
-    <Text as="h1" size="lg">I'm <mark>kappy.</mark></Text>
+    <Text as="h1" size="lg">Hi, I'm <mark>kappy.</mark>👋</Text>
     <div class="top-introduction">
-      <Text size="md" bold>
-        Webエンジニアです。Webフロントエンド開発に興味があります。
-      </Text>
+      <Text size="md" bold>Webフロントエンドエンジニアです。</Text>
     </div>
   </section>
   <section id="about" class="about">
     <Text as="h2" size="md">
-      <div class="heading">
-        About me
-        <Icon name="mdi:leaf" color="primary" />
-      </div>
+      <div class="heading">About me</div>
     </Text>
     <div class="avator-wrapper">
       <Avator width={128} height={128} />
     </div>
     <div class="socials-wrapper">
-      <Link to="https://twitter.com/kp047i">
+      <Link href="https://twitter.com/kp047i" target="_blank">
         <Icon
           name="mdi:github"
           title="Link to my GitHub profile page"
           hoverColor="blackAlpha100"
         />
       </Link>
-      <Link to="https://github.com/kp047i">
+      <Link href="https://github.com/kp047i" target="_blank">
         <Icon
           name="mdi:twitter"
           title="Link to my Twitter profile page"
           hoverColor="blackAlpha100"
         />
       </Link>
-      <Link to="https://qiita.com/kp047i">
+      <Link href="https://qiita.com/kp047i" target="_blank">
         <Icon
           name="simple-icons:qiita"
           title="Link to my Qiita profile page"
@@ -55,39 +48,14 @@ import { sketches } from "src/sketches/title";
         大学在学時にインタラクティブアートを展示するサークルに所属し、電子工作やWeb開発に興味を持ちました。大学4年次からIoT関連のスタートアップの企業でアルバイトを経験し、Webエンジニアを志すようになりました。
       </Text>
       <Text size="sm" bold>
-        JavaScriptやTypeScriptを使った開発が得意です。就職してからは主に、React,
+        JavaScriptやTypeScriptを使った開発が得意です。最近は主に、React,
         Next.js, NestJsを使った開発をしています。
       </Text>
-    </div>
-  </section>
-  <section class="galleries">
-    <Text as="h2">
-      <div class="heading">
-        Sketches
-        <Icon name="mdi:leaf" color="primary" />
-      </div>
-    </Text>
-    <div class="galleries-text">
-      <Text as="p" size="sm" bold>
-        p5.jsを使ったクリエイティブコーディングの作品を載せています。自作コンポーネントやcssアニメーションなども載せていきたい。
-      </Text>
-      <ul>
-        {
-          sketches.map((sketch) => (
-            <li>
-              <a href={`/sketches/${sketch}`}>{sketch}</a>
-            </li>
-          ))
-        }
-      </ul>
     </div>
   </section>
 </Layout>
 
 <style>
-  .top {
-    margin-top: 48px;
-  }
   .top-introduction {
     margin-top: 24px;
   }
@@ -100,15 +68,13 @@ import { sketches } from "src/sketches/title";
     gap: 24px;
     margin-top: 24px;
   }
-  .galleries {
-    margin-top: 48px;
-  }
   .galleries-text {
     margin-top: 24px;
   }
   mark {
     background: linear-gradient(transparent 60%, #4bb676 70%);
     color: #3e4240;
+    margin-right: 8px;
   }
   .avator-wrapper {
     display: grid;

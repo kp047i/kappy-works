@@ -1,5 +1,6 @@
 ---
 import "@fontsource/murecho";
+import "the-new-css-reset";
 import Header from "@components/ui/Header/index.astro";
 import Footer from "@components/ui/Footer/index.astro";
 
@@ -20,11 +21,13 @@ const { title } = Astro.props;
     <title>{title}</title>
   </head>
   <body>
-    <Header />
-    <main>
-      <slot />
-    </main>
-    <Footer />
+    <div id="root">
+      <Header />
+      <main>
+        <slot />
+      </main>
+      <Footer />
+    </div>
     <!-- Cloudflare Web Analytics -->
     <script
       defer
@@ -40,6 +43,7 @@ const { title } = Astro.props;
     --c-primary-50: #f0f9f3;
     --c-secondary: #7c4f26;
     --c-main: #3e4240;
+    --c-link: #034575;
     --c-blackAlpha-50: rgba(0, 0, 0, 0.04);
     --c-blackAlpha-100: rgba(0, 0, 0, 0.06);
     --c-blackAlpha-200: rgba(0, 0, 0, 0.08);
@@ -62,17 +66,25 @@ const { title } = Astro.props;
       DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
   }
 
-  main {
-    margin: auto;
-    padding: 16px 0;
-    max-width: 60ch;
+  #root {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
   }
 
-  @media (min-width: 768px) {
+  main {
+    margin: 80px auto;
+    padding: 32px 0;
+    max-width: 800px;
+    display: grid;
+    gap: 48px;
+  }
+
+  @media (max-width: 768px) {
     main {
-      margin: auto;
-      padding: 32px 0;
-      max-width: 100ch;
+      width: calc(100vw - 32px);
+      max-width: 480px;
+      padding: 16px 0;
     }
   }
 </style>

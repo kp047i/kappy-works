@@ -1,17 +1,17 @@
 ---
 import type { Color } from "@util/color";
+import { type HTMLAttributes } from "astro/types";
 
-interface Props {
-  to: string;
+interface Props extends HTMLAttributes<"a"> {
   decoration?: boolean;
   color?: Color;
 }
 
-const { to, decoration = true, color = "main" } = Astro.props;
+const { decoration = true, color = "main", ...props } = Astro.props;
 const decorationClass = decoration ? "" : "decoration-none";
 ---
 
-<a href={to} class:list={[decorationClass, color]}>
+<a {...props} class:list={[decorationClass, color]}>
   <slot />
 </a>
 

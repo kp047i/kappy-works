@@ -1,0 +1,55 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Text from "../../components/ui/Text/index.astro";
+import { sketches } from "src/sketches/title";
+---
+
+<Layout title="kappy works">
+  <section>
+    <div class="heading-wrapper">
+      <Text size="lg" bold as="h1">Sketches</Text>
+      <Text class="description" size="sm">
+        p5.jsを使ったクリエイティブコーディングの作品を載せています。
+      </Text>
+    </div>
+    <div class="galleries-text">
+      <ul class="galleres-list">
+        {
+          sketches.map((sketch) => (
+            <li>
+              <a class="sketch-link" href={`/sketches/${sketch}`}>
+                {sketch}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  section {
+    display: grid;
+    gap: 3rem;
+  }
+  .project-image {
+    width: 100%;
+    height: auto;
+  }
+
+  .heading-wrapper {
+    display: grid;
+    gap: 0.5rem;
+  }
+
+  .galleres-list {
+    display: grid;
+    gap: 0.2rem;
+  }
+
+  .sketch-link {
+    text-decoration: underline;
+    color: var(--c-link);
+  }
+</style>

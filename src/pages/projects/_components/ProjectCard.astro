@@ -1,0 +1,106 @@
+---
+import Text from "@components/ui/Text/index.astro";
+import Link from "@components/ui/Link/index.astro";
+import { Icon } from "astro-icon";
+
+export interface Props {
+  title: string;
+  description: string;
+  emoji: string;
+  repositoryLink?: string;
+  appLink?: string;
+}
+
+const { title, description, emoji, repositoryLink, appLink } = Astro.props;
+---
+
+<div class="project-card">
+  <div class="project-card-header">
+    <Text size="lg">{emoji}</Text>
+  </div>
+  <div class="project-card-body">
+    <div class="project-card-body-text">
+      <Text size="md" bold>{title}</Text>
+      <Text size="sm" class="description">{description}</Text>
+    </div>
+    <div class="project-card-body-icons">
+      {
+        repositoryLink && (
+          <Link href={repositoryLink} target="_blank">
+            <Icon
+              name="mdi:github"
+              title={`Link to ${title} repository`}
+              class="project-card-body-icon"
+              width="48"
+              height="48"
+            />
+          </Link>
+        )
+      }
+      {
+        appLink && (
+          <Link href={appLink} target="_blank">
+            <Icon
+              name="mdi:open-in-new"
+              title={`Link to ${title} page`}
+              class="project-card-body-icon"
+              width="48"
+              height="48"
+            />
+          </Link>
+        )
+      }
+    </div>
+  </div>
+</div>
+
+<style>
+  .project-card {
+    display: flex;
+    align-items: center;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    gap: 2rem;
+    border: 1px solid var(--c-blackAlpha-100);
+  }
+
+  .project-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    background-color: var(--color-bg-primary);
+    transition: background-color 0.2s ease-in-out;
+  }
+
+  .project-card-body {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    width: 100%;
+  }
+
+  .project-card-body-text {
+    display: grid;
+    gap: 0.5rem;
+  }
+
+  .project-card-body-icons {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .project-card-body-icon {
+    /* padding: 1rem; */
+    color: var(--color-bg-primary);
+    padding: 8px;
+    border-radius: 50%;
+  }
+
+  .project-card-body-icon:hover {
+    background-color: var(--c-blackAlpha-100);
+  }
+</style>

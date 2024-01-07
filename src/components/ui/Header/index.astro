@@ -4,23 +4,65 @@ import Text from "@components/ui/Text/index.astro";
 ---
 
 <header>
-  <Link to="/" decoration={false}>
-    <Text bold>kappy works</Text>
-  </Link>
+  <ul class="link-list">
+    <li class="link-list-item">
+      <Link href="/" decoration={false}>
+        <Text bold size="sm">Home</Text>
+      </Link>
+    </li>
+    <li class="link-list-item">
+      <Link href="/projects" decoration={false}>
+        <Text bold size="sm">Projects</Text>
+      </Link>
+    </li>
+    <!-- <li class="link-list-item">
+      <Link to="/blog" decoration={false}>
+        <Text bold size="sm">Blog</Text>
+      </Link>
+    </li> -->
+    <li class="link-list-item">
+      <Link href="/sketches" decoration={false}>
+        <Text bold size="sm">Sketches</Text>
+      </Link>
+    </li>
+  </ul>
 </header>
 
 <style>
   header {
     margin: auto;
-    padding: 0 16px;
-    max-width: 60ch;
+    position: fixed;
+    width: 100vw;
+    background-color: var(--c-primary-50);
+    z-index: 2;
+    padding: 16px 0;
+    top: 0;
   }
 
-  @media (min-width: 768px) {
+  @media (max-width: 768px) {
     header {
-      margin: auto;
-      padding: 0 16px;
-      max-width: 100ch;
+    }
+  }
+
+  .link-list {
+    display: flex;
+    justify-content: end;
+    gap: 24px;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  @media (max-width: 768px) {
+    .link-list {
+      width: calc(100vw - 32px);
+      max-width: 480px;
+    }
+  }
+
+  .link-list-item {
+    list-style: none;
+    > a:hover {
+      text-decoration: underline;
     }
   }
 </style>
